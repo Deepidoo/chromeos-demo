@@ -17,4 +17,4 @@ https://chromeos.deepidoo.me/
 
 ## How to reproduce
 
-Simply run this app on a ChromeOS device using Kiosk mode. After a random amount of reboot (sometimes the very first one, more likely between 5 and 20 reboots), the app will
+Simply install + run this app on a ChromeOS device using Kiosk mode. After a random amount of reboot (sometimes the very first one, more likely between 5 and 20 reboots), you'll reproduce the bug.
