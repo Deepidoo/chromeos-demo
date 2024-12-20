@@ -1,6 +1,6 @@
-let EXTID = "iofcikaolamaedhglbajjkbmdlleabed";
 function reboot() {
-  console.log("REBOOTING...");
+  let EXTID = "iofcikaolamaedhglbajjkbmdlleabed";
+
   chrome.runtime.sendMessage(EXTID, { action: "power/reboot" }, function (res) {
     if (res && !res.error) {
       resolve(res);
