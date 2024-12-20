@@ -1,0 +1,36 @@
+{
+  "id": "com.deepidoo.dj",
+  "display": "fullscreen",
+  "description": "DJ ChromeOS",
+  "short_name": "DJ",
+  "name": "DJ ChromeOS",
+  "permissions": [
+    "downloads",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.deepidoo.com/*",
+    "*://*.deepidoo.dev/*",
+    "*://*.deepidoo.me/*",
+    "*://*.sidonie.dexeo-technologie.com/*"
+  ],
+  "background": {
+	"service_worker": "sw.js"
+  },
+  "start_url": "/index.html",
+  "theme_color": "#3367D6",
+  "background_color": "#3367D6",
+  "icons": [
+    {
+      "src": "icons/mdpi.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "icons/xxxhdpi.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}

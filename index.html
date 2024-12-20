@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ChromeOS Demo app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: 'unsafe-inline' 'unsafe-eval' blob:; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline'; img-src * 'self' data: blob: filesystem: ; media-src * 'self' data: blob: filesystem: ;" />
+    <link rel="manifest" href="/manifest.json" />
+    <script type="text/javascript" src="demo.js"></script>
+
+    <script defer>
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const registration = await navigator.serviceWorker.register("/sw.js", {
+            scope: "/",
+          });
+          console.log("Service Worker registered successfully. Scope:", registration.scope);
+
+          window.addEventListener("unload", async () => {
+            await registration.unregister();
+          });
+        } catch (error) {
+          console.error("Service Worker registration failed:", error);
+        }
+
+        delayReboot();
+      });
+    </script>
+  </head>
+
+  <body></body>
+</html>
